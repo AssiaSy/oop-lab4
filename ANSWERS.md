@@ -1,3 +1,5 @@
+# Part 1
+
 **Prediction 1.** Is any line underlined in red? What happens when you run the file?
 
 => NO there no underlined in red
@@ -11,6 +13,9 @@ after runnig it, we have a type error because the describe doesn't exist
 => No, `memberList.add(42)` is not caught. It only crashes when running (42.getId is not a function)
 
 ///////////////////////////////////////////////////
+
+# Part 2
+
 **Question 2.** Two lines are underlined in red, with the same message. Copy it. Why does TypeScript refuse to call `getId()` on a `T`?
 
 => because typescript doestn't know what T represent 
@@ -81,7 +86,27 @@ The expected output remains exactly the same as Checkpoint 1.
 
 **Task 3. Mermaid diagram**
 
-
+```
+mermaid
+classDiagram
+  class Book {
+    -string title
+    -string borrower
+    -Queue~string~ reservations
+    +borrow(member) boolean
+    +giveBack() boolean
+    +getBorrower() string
+    +waiting() number
+  }
+  class Queue~T~ {
+    -T[] items
+    +enqueue(item) void
+    +dequeue() T
+    +size() number
+    +includes(item) boolean
+  }
+  Book "1" *-- "1" Queue : reservations
+```
 
 **Question 11.** Which relationship did you choose, and why?
 
